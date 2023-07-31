@@ -20,6 +20,7 @@ with open(
 ) as f:
     model = joblib.load(f)
 
+# load the multilabel binarizer
 with open(
     join(dirname(realpath(__file__)), "models/binarizer.pkl"), "rb"
 ) as f:
@@ -58,11 +59,9 @@ def predict_labels(plot: str):
 
     prob_dict = dict()
     for i in range(len(probas)):
-        print(i)
         predclass = classes[i]
         prob = probas[i]
         prob_dict[predclass] = prob
-
 
     label_predictions = binarizer.inverse_transform(prediction)
 
