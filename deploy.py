@@ -10,7 +10,7 @@ import string
 # intitialize app instance
 app = FastAPI(
     title="Movie Model API",
-    description="A simple API that uses a onevsrest logistic regression model to predict labels of the movie's plots",
+    description="A simple API that uses a onevsrest random forest model to predict labels of the movie's plots",
     version="0.1",
 )
 
@@ -26,6 +26,11 @@ with open(
     binarizer = joblib.load(f)
 
 def process_text(text):
+    """ 
+    Make text lowercase and remove punctuation
+    :param text: string to process
+    :return: processed string
+    """
     text = str(text).lower()
     text = re.sub(
         f"[{re.escape(string.punctuation)}]", " ", text
@@ -38,18 +43,28 @@ def process_text(text):
 async def root():
     return {"message": "Hello World"}
 
-@app.get("/predict-review")
-def predict_labels(review: str):
+@app.get("/predict-genre")
+def predict_labels(plot: str):
     """
-    A simple function that receive a review content and predict the sentiment of the content.
-    :param review:
+    A simple function that receives a movie plot and predicts the genre of the movie
+    :param rplot:
     :return: prediction, probabilities
     """    
     # perform prediction
-    prediction = model.predict([review])
-    probas = model.predict_proba([review])
+    processed_review = process_text(plot)
+    prediction = model.predict([processed_review])
+    probas = list(model.predict_proba([processed_review])[0][:])
+    classes = binarizer.classes_.tolist()
+
+    prob_dict = dict()
+    for i in range(len(probas)):
+        print(i)
+        predclass = classes[i]
+        prob = probas[i]
+        prob_dict[predclass] = prob
+
 
     label_predictions = binarizer.inverse_transform(prediction)
-    print(prediction)
-    
-    return label_predictions
+
+    result = {"prediction": label_predictions, "probs": str(prob_dict)}
+    return result
