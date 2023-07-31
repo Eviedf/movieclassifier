@@ -3,4 +3,3 @@ test.xlsx
 ~$test.xlsx
 \models
 backup data.xlsx
-__pycache__/deploy.cpython-311.pyc
