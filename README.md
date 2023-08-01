@@ -23,10 +23,11 @@ but Fiona is also hiding a huge secret._
 True genres: Animation, Adventure, Comedy
 
 Enter your data here:
-![image](https://github.com/Eviedf/movieclassifier/assets/25794934/08839dde-0aef-4025-83df-58b3f9d6ff80)
+![image](https://github.com/Eviedf/movieclassifier/assets/25794934/4fd46f69-47da-4bd0-99b9-f7eafa0678e8)
+
 
 Find the output below: 
-![image](https://github.com/Eviedf/movieclassifier/assets/25794934/4d052e11-a405-4ad3-af26-7215752d2368)
+![image](https://github.com/Eviedf/movieclassifier/assets/25794934/8340e0bd-f412-4057-880c-824ef6539764)
 
 
 **Grave of the Fireflies**
@@ -37,10 +38,11 @@ the two children from their parents, the two siblings must rely completely on on
 True genres: Animation, Drama, War
 
 Enter your data here:
-![image](https://github.com/Eviedf/movieclassifier/assets/25794934/0d108ade-eeb3-4f50-bd36-09d821eaabc9)
+![image](https://github.com/Eviedf/movieclassifier/assets/25794934/d1ac46a4-b4ef-4ad2-ab0f-d32554d325f7)
 
 Find the output below:
-![image](https://github.com/Eviedf/movieclassifier/assets/25794934/57ddf516-3558-4094-a61a-c89974b1ee22)
+![image](https://github.com/Eviedf/movieclassifier/assets/25794934/120e6bd1-bcb2-4e9d-973d-18899c4e66ba)
+
 
 
 
